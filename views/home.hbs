@@ -23,23 +23,26 @@
             <div class="container-fluid  m-0  align-items-center  justify-content-center d-flex"
                 style="min-height: 100vh;padding:40px;">
 
-                <!-- Row for the card-->
+
+                <!-- Row start for the card-->
                 <div class="row w-100 p-0 w-0">
-                    <!-- Column for card-->
+                    <!-- Column start for card-->
+                    {{#if hasprod}}
+                    {{#each prod}}
                     <div class="col-lg-4 mb-2">
                         <div class="card mx-auto" style="width:24rem;">
                             <div class="content_img">
-                                <img class="card-img-top" src="./img/table.jpg" alt="Card image cap">
+                                <img class="card-img-top" src={{productURLs}} alt="Card image cap">
                                 <div class="card mx-auto" id="cardbody" style="width:24rem;">
-                                    <div class="prod_name">Product Name</div>
-                                    <div class="brand_name">Brand Name</div>
+                                    <div class="prod_name">{{productName}}</div>
+                                    <div class="brand_name">{{brandName}}</div>
                                     <div class="aParent">
                                         <div class="addtocart">
                                             <span>+ Add to Cart</span>
 
                                         </div>
                                         <div class="price">
-                                            <span>$900</span>
+                                            <span>${{productPrice}}</span>
 
                                         </div>
                                     </div>
@@ -50,132 +53,19 @@
 
                         </div>
                     </div>
-
-                    <!-- Another column for card -->
-                    <div class="col-lg-4 mb-2">
-                        <div class="card mx-auto" style="width:24rem;">
-                            <div class="content_img">
-                                <img class="card-img-top" src="./img/table.jpg" alt="Card image cap">
-                                <div class="card mx-auto" id="cardbody" style="width:24rem;">
-                                    <div class="prod_name">Product Name</div>
-                                    <div class="brand_name">Brand Name</div>
-                                    <div class="aParent">
-                                        <div class="addtocart">
-                                            <span>+ Add to Cart</span>
-
-                                        </div>
-                                        <div class="price">
-                                            <span>$900</span>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <!-- Another column for card -->
-                    <div class="col-lg-4 mb-2">
-                        <div class="card mx-auto" style="width:24rem;">
-                            <div class="content_img">
-                                <img class="card-img-top" src="./img/table.jpg" alt="Card image cap">
-                                <div class="card mx-auto" id="cardbody" style="width:24rem;">
-                                    <div class="prod_name">Product Name</div>
-                                    <div class="brand_name">Brand Name</div>
-                                    <div class="aParent">
-                                        <div class="addtocart">
-                                            <span>+ Add to Cart</span>
-
-                                        </div>
-                                        <div class="price">
-                                            <span>$900</span>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <!-- Another column for card -->
-                    <div class="col-lg-4 mb-2">
-                        <div class="card mx-auto" style="width:24rem;">
-                            <div class="content_img">
-                                <img class="card-img-top" src="./img/table.jpg" alt="Card image cap">
-                                <div class="card mx-auto" id="cardbody" style="width:24rem;">
-                                    <div class="prod_name">Product Name</div>
-                                    <div class="brand_name">Brand Name</div>
-                                    <div class="aParent">
-                                        <div class="addtocart">
-                                            <span>+ Add to Cart</span>
-
-                                        </div>
-                                        <div class="price">
-                                            <span>$900</span>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <!-- Another column for card -->
-                    <div class="col-lg-4 mb-2">
-                        <div class="card mx-auto" style="width:24rem;">
-                            <div class="content_img">
-                                <img class="card-img-top" src="./img/table.jpg" alt="Card image cap">
-                                <div class="card mx-auto" id="cardbody" style="width:24rem;">
-                                    <div class="prod_name">Product Name</div>
-                                    <div class="brand_name">Brand Name</div>
-                                    <div class="aParent">
-                                        <div class="addtocart">
-                                            <span>+ Add to Cart</span>
-
-                                        </div>
-                                        <div class="price">
-                                            <span>$900</span>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <!-- Another column for card -->
-                    <div class="col-lg-4 mb-2">
-                        <div class="card mx-auto" style="width:24rem;">
-                            <div class="content_img">
-                                <img class="card-img-top" src="./img/table.jpg" alt="Card image cap">
-                                <div class="card mx-auto" id="cardbody" style="width:24rem;">
-                                    <div class="prod_name">Product Name</div>
-                                    <div class="brand_name">Brand Name</div>
-                                    <div class="aParent">
-                                        <div class="addtocart">
-                                            <span>+ Add to Cart</span>
-
-                                        </div>
-                                        <div class="price">
-                                            <span>$900</span>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
+                    {{else}}
+                <p>no row found</p>
+                {{/each}}
+                    <!-- Column end for card-->
                 </div>
+                <!-- Row end for the card-->
+                
+                {{else}}
+                <p>No data</p>
+                {{/if}}
             </div>
 
-           
+
         </div>
 
     </div>

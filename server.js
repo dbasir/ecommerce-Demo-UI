@@ -57,8 +57,10 @@ mongoose.connect(config.dbconn, { useNewUrlParser: true, useUnifiedTopology: tru
 
  //Routes
   app.get("/",(req,res)=>{
-    var Product = new ProductModel({
-        productURLs:"./views/img/productsImg/prod1.jpg",
+
+    /** 
+     var Product = new ProductModel({
+        productURLs:"./img/productsImg/prod1.jpg",
         productName:"Table",
         brandName:"Ikea",
         productPrice:900
@@ -70,9 +72,17 @@ mongoose.connect(config.dbconn, { useNewUrlParser: true, useUnifiedTopology: tru
           console.log("The Table product was saved to the productList collection");
         }
         // exit the program after saving
-        process.exit();
+       // process.exit();
       });
-     res.render("home",{layout:false})
+    */
+      ProductModel.find()
+      .lean()
+      .exec()
+      .then((prod) => {
+          res.render("home", { prod: prod, hasprod: !!prod.length, layout: false })
+      })
+    
+     
  })
 
 

@@ -1,0 +1,56 @@
+<div class="topnav" id="myTopnav">
+  <a class="header" href="#fulhausshop" class="active">FULHAUS SHOP</a>
+  <a class="cart" href="#cart" onclick="myFunction()">CART</a>
+
+</div>
+<div id="myDIV">
+  <div class="container" style="height: 80%;position: relative;">
+    <div class="row" id="cart_row">
+      <div class="col"><img class="card-img-top" src="./img/table.jpg" alt="Card image cap" style="width: 86%;"></div>
+      <div class="col-md-auto">
+        <div class="cart_size">
+          <div class="a_prod_name" style="font-size:1vw;">Product Name</div>
+          <div class="a_brand_name" style="font-size:1vw;">Brand Name</div>
+          <div class="aPrice" style="font-size:1vw;">$900</div>
+        </div>
+      </div>
+      <div class="col" style="text-align:right">
+        <div class="ex2"></div>
+      </div>
+    </div>
+    <div class="row" id="cart_row">
+      <div class="col"><img class="card-img-top" src="./img/table.jpg" alt="Card image cap" style="width: 86%;"></div>
+      <div class="col-md-auto">
+        <div class="cart_size">
+          <div class="a_prod_name" style="font-size:1vw;">Product Name</div>
+          <div class="a_brand_name" style="font-size:1vw;">Brand Name</div>
+          <div class="aPrice" style="font-size:1vw;">$900</div>
+        </div>
+      </div>
+      <div class="col" style="text-align:right">
+        <div class="ex2"></div>
+      </div>
+    </div>
+    <div class="row" id="total_row" style="bottom: 15%;font-weight:bold">
+      <div class="col" >Total</div>
+      <div class="col" style="text-align:right">$1800</div>
+    </div> 
+    <div class="row" id="total_row" style="bottom: 0;">
+      <div class="col" ><a href="#checkout" class="checkout_btn">Checkout</a></div>
+    </div>
+  </div>
+
+
+</div>
+<script>
+  function myFunction() {
+
+
+    var x = document.getElementById("myDIV");
+    if (x.style.display === "block") {
+      x.style.display = "none";
+    } else {
+      x.style.display = "block";
+    }
+  }
+</script>

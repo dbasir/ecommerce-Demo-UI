@@ -9,6 +9,7 @@
  var express = require('express');
  var app  = express();
  var HTTP_PORT = process.env.PORT||8080;
+ //const fetch = require('node-fetch');
 
  function onHTTPStart(){
      console.log("Express is running on port : "+HTTP_PORT);
@@ -55,9 +56,16 @@
 // database connection
 mongoose.connect(config.dbconn, { useNewUrlParser: true, useUnifiedTopology: true });
 
+
  //Routes
   app.get("/",(req,res)=>{
-
+    
+    request({
+      url:"https://main-api.fulhaus.com/fulhaus-tech-test/get-products",
+      json:true
+  },(err, response, body)=>{
+      console.log(JSON.stringify(body[0].imageURLs, undefined, 4));
+  })
     /** 
      var Product = new ProductModel({
         productURLs:"./img/productsImg/prod1.jpg",
@@ -85,12 +93,33 @@ mongoose.connect(config.dbconn, { useNewUrlParser: true, useUnifiedTopology: tru
      
  })
 
-
-  
- 
-
- 
-
-
  //Start Express Server
  app.listen(HTTP_PORT, onHTTPStart);
+
+
+ ///// To connect to SQL Server through Node.JS
+
+ /**
+  *function testDB(){
+    var sql = require('mssql');
+    var config = {
+      user:'DESKTOP-T6MVOUI\\DELL',
+      password:'Apo@12345',
+      database:'AdventureWorks2017',
+      server:'DESKTOP-T6MVOUI\\SQLEXPRESS',
+      options: {
+        //encrypt: true, // for azure
+        trustServerCertificate: true // change to true for local dev / self-signed certs
+      }
+    }
+    var connection = new sql.ConnectionPool(config,function(err){
+      console.log(err);
+      var request = new sql.Request(connection);
+      request.query('SELECT TOP (10) [DepartmentID],[Name] ,[GroupName],[ModifiedDate] FROM [HumanResources].[Department]',function(err,recordset){
+        console.log("query errors: "+err);
+        console.log(recordset);
+      })
+    });
+  }
+  */
+ ///// To connect to SQL Server through Node.JS

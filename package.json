@@ -15,6 +15,18 @@
     "express": "^4.17.1",
     "express-handlebars": "^5.3.3",
     "mongoose": "^6.0.6",
+    "mssql": "^7.2.1",
+    "node-fetch": "^3.0.0",
     "request": "^2.88.2"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dbasir/ecommerce-demo-UI.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/dbasir/ecommerce-demo-UI/issues"
+  },
+  "homepage": "https://github.com/dbasir/ecommerce-demo-UI#readme"
 }
